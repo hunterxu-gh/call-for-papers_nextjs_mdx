@@ -1,12 +1,15 @@
-import './global.css'
-import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
-import { Navbar } from './components/nav'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import Footer from './components/footer'
-import { baseUrl } from './sitemap'
+import './global.css';
+
+import { GeistMono } from 'geist/font/mono';
+import { GeistSans } from 'geist/font/sans';
+import type { Metadata } from 'next';
+
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
+import Footer from './components/footer';
+import { Navbar } from './components/nav';
+import { baseUrl } from './sitemap';
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -47,19 +50,24 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-black bg-white dark:text-white dark:bg-black',
+        'text-black bg-gray-200 dark:text-white dark:bg-black',
         GeistSans.variable,
         GeistMono.variable
       )}
     >
-      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+      <body className="antialiased max-w-[70vw] mx-4 mt-20 lg:mx-auto">
+        <div className='banner'>
+          <p >Industry day position paper submission date is extended till 18th May 2024, 11:59PM AoE.</p>
+        </div>
+        <div className="flex w-80vw">
           <Navbar />
-          {children}
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
-        </main>
+          <main className="flex-grow min-w-0 mt-6 flex flex-col px-2 md:px-0 ml-8">
+            {children}
+            <Footer />
+            <Analytics />
+            <SpeedInsights />
+          </main>
+        </div>
       </body>
     </html>
   )

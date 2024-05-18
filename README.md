@@ -40,3 +40,11 @@ pnpm dev
 ```
 
 Deploy it to the cloud with [Vercel](https://vercel.com/templates) ([Documentation](https://nextjs.org/docs/app/building-your-application/deploying)).
+
+
+# Workflow
+1. Clone the repo from GitHub
+2. Create a new empty repo with default settings on GitHub
+3. Add the remote repo and push
+4. Push the branches
+5. Create a new branch (t for template, f for feature)
